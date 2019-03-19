@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>OpenWeather API</title>
+        <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootswatch/4.3.1/flatly/bootstrap.min.css" type="text/css"></link>
+        <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300" type="text/css"></link>
+    </head>
+    <body>
+        <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+            <div class="container">
+                <a href="/" class="navbar-brand"><i class="fa fa-globe"></i> OWM.org</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                            <a class="nav-link" href="/">Search</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="https://openweathermap.org">OpenWeather</a>
+                            </li>
+                        </ul>
+            
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                            <a class="nav-link" href="https://wrapbootstrap.com/?ref=bsw" target="_blank">Express App</a>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+        <div class="container" style="margin-top:100px;">
+            <form action="/" method="post">
+                <fieldset>
+                    <div class="form-group">
+                        <div class="row">
+                            <input class="form-control form-control-lg col-lg-4" style="margin-right:3px;" type="text" placeholder="Enter City Name">
+                            <button class="btn btn-primary" type="submit"><i class="fa fa-check-circle"></i> Get Weather</button>
+                        </div>
+                      </div>
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>
