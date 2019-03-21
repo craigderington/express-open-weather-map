@@ -3,7 +3,7 @@
 const express = require('express');
 const request = require('request');
 const nconf = require('nconf');
-const apiKey = '*****************';
+const apiKey = '******************';
 
 // config
 nconf.argv()
