@@ -3,7 +3,7 @@
 const express = require('express');
 const request = require('request');
 const nconf = require('nconf');
-const apiKey = 'a39cca2ccb399fb4152574fc86109c83';
+const apiKey = '*****************';
 
 // config
 nconf.argv()
@@ -46,7 +46,7 @@ app.get('/weather/city/:cityname', function(req, res) {
             if(response.statusCode == 404) {
                 res.json({'Error': 'Could not get weather data for ' + city});
             } else {
-                res.json({'Response': data, 'Status': response.statusCode});
+                res.status(response.statusCode).json(data.main.humidity);
             }
         }
     })
@@ -54,7 +54,7 @@ app.get('/weather/city/:cityname', function(req, res) {
 
 // weather by coordinates
 app.get('/weather/lat/:lat/lng/:lng', function(req, res){
-    let lat = req.param.lat;
+    let lat = req.params.lat;
     let lng = req.params.lng;
     let url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lng=${lng}&appid=${apiKey}`;
 
@@ -77,7 +77,7 @@ app.get('/weather/lat/:lat/lng/:lng', function(req, res){
 
 // weather by zip code
 app.get('/weather/:zipcode', function(req, res){
-    let zipCode = req.param.zipcode;
+    let zipCode = req.params.zipcode;
     let url = `http://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&appid=${apiKey}`;
 
     // a different design pattern for request library
